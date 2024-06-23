@@ -22,11 +22,17 @@ First, you'll want to run the database migrations in the solution.
 
 ```bash
 dotnet tool restore
-dotnet ef database update
+dotnet-ef database update
 ```
 
 Next, you can follow the instructions on the [documentation page](https://docs.timescale.com/getting-started/latest/add-data/#ingest-the-dataset), or use JetBrains Rider database tools to import the data after running the **EF Core migrations**. The **Companies** table should be relatively quick, but the `Stocks` table will take a bit of time.
 
+https://docs.timescale.com/getting-started/latest/time-series-data/
+```psql
+# quoted "Companies" to make it case sensitive
+\COPY "Companies" from  './real_time_stock_data/tutorial_sample_company.csv' DELIMITER ',' CSV HEADER;
+\COPY "Stocks" from  './real_time_stock_data/tutorial_sample_tick.csv' DELIMITER ',' CSV HEADER;
+```
 ## Running the Application
 
 You can run the solution once your data has loaded. The resulting output should look like the following.

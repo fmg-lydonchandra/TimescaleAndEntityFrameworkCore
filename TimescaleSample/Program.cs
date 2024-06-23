@@ -14,7 +14,7 @@ Console.WriteLine($"{trades} trades of MSFT in the last week");
 
 // UTC Only
 // Read this and cry https://www.npgsql.org/doc/types/datetime.html
-var date = new DateTime(2022, 06, 29, 0, 0, 0, DateTimeKind.Utc);
+var date = new DateTime(2024, 06, 23, 0, 0, 0, DateTimeKind.Utc);
 var top = db
     .GetWeeklyResults(date)
     .First(x => x.Symbol == "MSFT");

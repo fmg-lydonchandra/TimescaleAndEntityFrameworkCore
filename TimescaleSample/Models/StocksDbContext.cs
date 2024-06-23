@@ -21,7 +21,7 @@ public class StocksDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder
-            .UseNpgsql(connectionString: "Server=localhost;User Id=postgres;Password=password;Database=postgres;")
+            .UseNpgsql(connectionString: "Server=localhost;User Id=postgres;Password=bla;Database=postgres;")
             //.LogTo(Console.WriteLine)
         ;
 
